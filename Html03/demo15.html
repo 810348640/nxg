@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DOM</title>
+		
+	</head>
+	<body>
+		<img src="img/logo.png" id="first">
+		<h1 id="title">hello js</h1>
+	</body>
+	<script>
+		var ele = document.getElementById("first");
+		//alert(ele);
+		var ele2 = document.getElementById("title");
+		alert("我要更换内容了")
+		ele2.innerHTML = "Hi js";
+	</script>
+</html>

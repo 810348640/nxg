@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Function对象</title>
+		
+		<script>
+			
+			/**
+			 * arguments ：内置对象，封装了所有的实际参数
+			 */
+			
+			//1.创建方式
+			var fun1 = function(a,b){
+				alert(a+b);
+			}
+			//fun1(3,4);
+			
+			function fun2(a,b,c){
+				alert(a+b+c);
+			}
+			// fun2(6,9,2);
+			// alert(fun2.length);
+			
+			//覆盖
+			fun1 = function(a,b){
+				//alert(a-b);
+				alert(a);
+				alert(b);
+			}
+			
+			//fun1(3,5);
+			//fun1(1,2);
+			//fun1(1);
+			//fun1(1,2,3);
+			
+			/**
+			 * 求任意参数的和
+			 */
+			function add(){
+				var sum =0;
+				for (var i = 0; i < arguments.length; i++) {
+					sum +=arguments[i];
+				}
+				return sum;
+			}
+			var sum = add(1,2,3);
+			alert(sum);
+			
+			
+		</script>
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

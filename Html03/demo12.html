@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Array对象</title>
+		
+		<script>
+			/**
+			 * 特点：js中，元素类型是可变的；
+			 * 		 js中，数组的长度是可变的	
+			 */
+			//1.创建
+			var arr = [1,true,"abc"];
+			document.write(arr+"<br>");
+			var arr2 = new Array(1,2,3);
+			document.write(arr2+"<br>");
+			var arr3 = new Array(5);
+			document.write(arr3+"<br>");
+			//2.访问
+			document.write(arr[0]+"<br>");
+			document.write(arr[1]+"<br>");
+			document.write(arr[2]+"<br>");
+			document.write(arr[3]+"<br>");
+			
+			arr[10] = "hello";
+			document.write(arr+"<br>");
+			//alert(arr.length);
+			document.write("<hr>");
+			
+			document.write(arr.join("***")+"<br>");
+			arr.push(11);
+			document.write(arr+"<br>");
+			
+		</script>
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

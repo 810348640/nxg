@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Document对象</title>
+		
+	</head>
+	<body>
+		<div id="div1">div</div>
+		<div id="div2">div</div>
+		
+		<div class="cls1">div</div>
+		<div class="cls1">div</div>
+		
+		<input type="text" name="username" />
+		
+	</body>
+	<script>
+		//根据元素名称获取元素对象,返回一个数组
+		var divs = document.getElementsByTagName("div");
+		//alert(divs.length);
+		//根据Class获取元素对象,返回一个数组
+		var divs2 = document.getElementsByClassName("cls1");
+		//alert(divs2.length);
+		//根据name获取元素对象,返回一个数组
+		var divs3 = document.getElementsByName("username");
+		alert(divs3.length);
+		//根据id获取元素对象,
+		var div4 = document.getElementById();
+		
+		
+	</script>
+</html>

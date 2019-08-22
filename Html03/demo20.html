@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>动态表格</title>
+		<style>
+			table{
+				border: 1px solid red;
+				width: 500px;
+			}
+			td,th{
+				border: 1px solid;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<input type="text" placeholder="请输入用户编号" id="id">
+			<input type="text" placeholder="请输入用户姓名" id="name">
+			<input type="text" placeholder="请输入用户性别" id="gender">
+			<input type="button" id="btn_add" value="添加" />
+		</div>
+		
+		<table >
+			<caption>学生信息表</caption>
+			<tr>
+				<th>编号</th>
+				<th>姓名</th>
+				<th>性别</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>zs</td>
+				<td>男</td>
+				<td><a href="javascript:void(0)" onclick="delTr(this);">删除</a></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>ls</td>
+				<td>女</td>
+				<td><a href="javascript:void(0)" onclick="delTr(this);">删除</a></td>
+			</tr>
+			
+		</table>
+		
+	</body>
+	<script>
+		
+		/**
+		 * 1.添加
+		 * 
+		 * 按钮绑定事件
+		 * 采集文本内容
+		 * 
+		 */
+		var btn = document.getElementById("btn_add");
+		btn.onclick = function(){
+			var id = document.getElementById("id").value;
+			var name = document.getElementById("name").value;
+			var gender = document.getElementById("gender").value;
+			/**
+			//id
+			//创建td节点
+			var id_td = document.createElement("td");
+			//创建文本节点
+			var text_id = document.createTextNode(id);
+			//添加孩子节点
+			id_td.appendChild(text_id);
+			//name
+			var name_td = document.createElement("td");
+			var text_name = document.createTextNode(name);
+			name_td.appendChild(text_name);
+			//gender
+			var gender_td = document.createElement("td");
+			var text_gender = document.createTextNode(gender);
+			gender_td.appendChild(text_gender);
+			//operation
+			var op_td = document.createElement("td");
+			var op_a = document.createElement("a");
+			op_a.setAttribute("href","javascript:void(0)");
+			op_a.setAttribute("onclick","delTr(this);");
+			var text_a = document.createTextNode("删除");
+			op_a.appendChild(text_a);
+			op_td.appendChild(op_a);
+			//tr
+			var tr = document.createElement("tr");
+			tr.appendChild(id_td);
+			tr.appendChild(name_td);
+			tr.appendChild(gender_td);
+			tr.appendChild(op_td)
+			*/
+			//table
+			var table = document.getElementsByTagName("table")[0];
+			//table.appendChild(tr);
+			
+			//innerHtml
+			table.innerHTML += "<tr><td>"+id+"</td><td>"+name+"</td><td>"+gender
+			+"</td><td><a href='javascript:void(0)' onclick='delTr(this);'>删除</a></td></tr>"
+
+			
+		}
+		
+		//删除
+		//this 代表当前超链接这个对象
+		function delTr(obj){
+			//alert(obj);
+			var table = obj.parentNode.parentNode.parentNode;
+			var tr = obj.parentNode.parentNode;
+			table.removeChild(tr);
+		}
+		
+		
+		
+		
+	</script>
+</html>

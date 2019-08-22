@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			
+			div{
+				border: 1px solid red;
+			}
+			#div1{
+				width: 200px;
+				height: 200px;
+			}
+			#div2{
+				width: 100px;
+				height: 100px;
+			}
+			#div3{
+				width: 100px;
+				height: 100px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<div id="div2">
+				div2
+			</div>
+			div1
+		</div>
+		
+		<a id="del" href="javascript:void(0)">删除子节点</a>
+		<a id="add" href="javascript:void(0)">添加子节点</a>
+	</body>
+	
+	<script>
+		//1.获取a
+		var ele_a = document.getElementById("del");
+		//2.绑定点击事件
+		ele_a.onclick = function(){
+			var div1 = document.getElementById("div1");
+			var div2 = document.getElementById("div2");
+			div1.removeChild(div2);
+		}
+		
+		//1.获取a
+		var add_a = document.getElementById("add");
+		//2.绑定点击事件
+		add_a.onclick = function(){
+			var div1 = document.getElementById("div1");
+			//给div1添加子节点
+			var div3 = document.createElement("div");
+			div3.setAttribute("id","div3");
+			div1.appendChild(div3);
+		}
+		
+		var div2 = document.getElementById("div2");
+		var div1 = div2.parentNode;
+		//alert(div1);
+		
+	</script>
+	
+</html>
