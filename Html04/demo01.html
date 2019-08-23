@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>表格全选</title>
+		<style>
+			table{
+				border: 1px solid red;
+				width: 500px;
+			}
+			td,th{
+				border: 1px solid;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<table >
+			<caption>学生信息表</caption>
+			<tr>
+				<th><input type="checkbox" name="cb" id="firstcb"/></th>
+				<th>编号</th>
+				<th>姓名</th>
+				<th>性别</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="cb"/></td>
+				<td>1</td>
+				<td>zs</td>
+				<td>男</td>
+				<td><a href="javascript:void(0)" onclick="delTr(this);">删除</a></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="cb"/></td>
+				<td>2</td>
+				<td>ls</td>
+				<td>女</td>
+				<td><a href="javascript:void(0)" onclick="delTr(this);">删除</a></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="cb"/></td>
+				<td>3</td>
+				<td>we</td>
+				<td>女</td>
+				<td><a href="javascript:void(0)" onclick="delTr(this);">删除</a></td>
+			</tr>
+			
+		</table>
+		
+		<div>
+			<input type="button" id="selectAll" value="全选" />
+			<input type="button" id="unselectAll" value="全不选" />
+			<input type="button" id="selectRev" value="反选" />
+		</div>
+	</body>
+	
+	
+	<script>
+		
+		/**
+		 * 1.全选
+		 * 	 获取所有的checkbox,状态设置为checked
+		 */
+		var btn_all = document.getElementById("selectAll");
+		btn_all.onclick = function(){
+			var cbs = document.getElementsByName("cb");
+			//遍历
+			for (var i = 0; i < cbs.length; i++) {
+				//设置每一个cb的状态为选中 checked
+				cbs[i].checked = true;
+			}
+		}
+		
+		/**
+		 * 2.全不选
+		 */
+		var btn_unall = document.getElementById("unselectAll");
+		btn_unall.onclick = function(){
+			var cbs = document.getElementsByName("cb");
+			//遍历
+			for (var i = 0; i < cbs.length; i++) {
+				//设置每一个cb的状态为选中 checked
+				cbs[i].checked = false;
+			}
+		}
+		
+		/**
+		 * 3.反选
+		 *  和自己状态相反的状态
+		 */
+		var btn_rev = document.getElementById("selectRev");
+		btn_rev.onclick = function(){
+			var cbs = document.getElementsByName("cb");
+			//遍历
+			for (var i = 0; i < cbs.length; i++) {
+				//设置每一个cb的状态为选中 checked
+				cbs[i].checked = !cbs[i].checked;
+			}
+		}
+		
+		var firstcb = document.getElementById("firstcb");
+		firstcb.onclick=function(){
+			var cbs = document.getElementsByName("cb");
+			//遍历
+			for (var i = 1; i < cbs.length; i++) {
+				//以一个cb的状态为标准
+				cbs[i].checked = this.checked;
+			}
+		}
+		
+	</script>
+	
+</html>

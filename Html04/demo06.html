@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表单校验</title>
+		<style>
+			#yh{
+				color: #0000FF;
+			}
+		</style>
+		<script>
+			
+			function checkForm(){
+				
+			}
+			
+			//提示信息
+			function showuTips(){
+				document.getElementById("userspan").innerHTML = "<font color='grey'>用户名不能为空</font>";
+			}
+			
+			function checkUser(){
+				var username = document.getElementById("username").value;
+				//console.log("user:"+username);
+				if(username == ""){
+					document.getElementById("userspan").innerHTML = "<font color='color'>用户名不能为空</font>";
+					return false;
+				}
+				return 
+			}
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<form action="#" method="get" onsubmit="return checkForm()">
+			<table border="1" align="center" width="500px" cellspacing="0">
+				<tr>
+					<td colspan="2"> <span id="yh">会员注册</span> USER REGISTER</td>
+				</tr>
+				<tr>
+					<td><label for="username">用户名</label></td>
+					<td><input type="text" name="username" id="username" placeholder="请输入用户名" onfocus="showuTips()"/>
+						<span id="userspan"></span>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="password">密码</label></td>
+					<td><input type="password" name="password" id="password" placeholder="请输入密码"/></td>
+				</tr>
+				<tr>
+					<td><label for="confirmpwd">确认密码</label></td>
+					<td><input type="password" name="confirmpwd" id="confirmpwd" placeholder="请输入确认密码"/></td>
+				</tr>
+				<tr>
+					<td><label for="email">Email</label></td>
+					<td><input type="email" name="email" id="email" placeholder="请输入邮箱"/></td>
+				</tr>
+				<tr>
+					<td><label for="user">姓名</label></td>
+					<td><input type="text" name="user" id="user" placeholder="请输入姓名"/></td>
+				</tr>
+				<tr>
+					<td><label>性别</label></td>
+					<td><input type="radio" name="gender"/>男<input type="radio" name="gender"/>女</td>
+				</tr>
+				<tr>
+					<td><label for="birthday">生日</label></td>
+					<td><input type="date" name="birthday" id="birthday"/></td>
+				</tr>
+				
+				<tr>
+					<td><label for="checkCode">验证码</label></td>
+					<td><input type="text" name="checkCode" id="checkCode"/>
+						<img src="img/yanzhengma.png"/>
+					</td>
+				</tr>
+				
+				<tr align="center">
+					<td colspan="2">
+						<button style="background-color: #FF0000;color: white;">注册</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>轮播图</title>
+	</head>
+	<body>
+		<img src="img/1.jpg" id="img">
+		<!-- <input type="button" value="点击我" id="img_btn"/> -->
+	</body>
+	
+	<script>
+		
+		var num = 1;
+		function fun(){
+			num++;
+			if(num > 3){
+				num = 1;
+			}
+			var img = document.getElementById("img");
+			img.src = "img/"+num+".jpg";
+		}
+		
+		//设置定时器
+		setInterval(fun,3000);
+		
+	</script>
+	
+</html>
