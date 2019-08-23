@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.4.1.js"></script>
+		<script>
+			
+			function writeJs(){
+				var span = document.getElementById("sp");
+				//span.innerHTML="hi js";
+				//span.html("hi js");
+				$(span).html("hi js")
+			}
+			
+			$(function(){
+				$("#btn2").click(
+					function(){
+						//$("#sp").html("hi jquery");
+						//$("#sp").get(0).innerHTML = "hi jquery";
+						$("#sp")[0].innerHTML = "hi jquery";
+					}
+				)
+			})
+		</script>
+	</head>
+	<body>
+		<input type="button" onclick="writeJs()" id="btn1" value="js" />
+		<input type="button" id="btn2" value="jq" /><br />
+		
+		Jquery:<span id="sp">hi </span>
+
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>联动</title>
+	</head>
+	<body>
+		<!--为省份注册onchange事件-->
+		<label>籍贯：</label>
+		<select onchange="changeCity(this.value)">
+			<option>--请选择--</option>
+			<option value="0">湖北</option>
+			<option value="1">湖南</option>
+			<option value="2">江苏</option>
+			<option value="3">浙江</option>
+		</select>
+		<select id="city">
+
+		</select>
+
+	</body>
+	<script>
+		
+		//1.定义一个二维数组，用于存储省份和城市的信息
+		var cities = new Array(3);
+		//2.定义第二维的数组，存储城市
+		cities[0] = new Array("武汉市","黄石市","黄冈市","十堰市");
+		cities[1] = new Array("长沙市","株洲市","湘潭市","衡阳市");
+		cities[2] = new Array("苏州市","南京市","无锡市","常州市");
+		cities[3] = new Array("杭州市","温州市","宁波市","嘉兴市");
+		function changeCity(obj){
+			//alert(obj);
+			var city = document.getElementById("city");
+			//清空
+			city.options.length = 0;
+			//遍历
+			for (var i = 0; i < cities.length; i++) {
+				if(i == obj){
+					for (var j = 0; j < cities[i].length; j++) {
+						console.log(cities[i][j]);
+						//创建文本节点
+						var opt_text = document.createTextNode(cities[i][j]);
+						var opt = document.createElement("option");
+						opt.appendChild(opt_text);
+						city.appendChild(opt);
+					}
+				}
+			}
+		}
+	</script>
+</html>

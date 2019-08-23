@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.4.1.js"></script>
+		<script>
+			
+			$(function(){
+				$("#bt").click(
+					function(){
+						//alert("hi")
+						//$("img").show("slow");
+						//$("img").slideDown();
+						$("img").fadeIn("slow");
+					}
+				)
+				
+				$("#bt_hid").click(
+					function(){
+						$("img").hide();
+					}
+				)
+			})
+			
+		</script>
+		
+		
+	</head>
+	<body>
+		<img src="img/1.jpg" style="display: none;" width="500px" height="300px"/>
+		<input type="button" id="bt" value="点击ME"/>
+		<input type="button" id="bt_hid" value="点击隐藏"/>
+	</body>
+</html>
